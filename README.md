@@ -1,2 +1,2 @@
 # ITER-Assignments
-this contains all the assignment of ITER for 1st sem. (including homework questions)
+this contains all the assignment of ITER for 1st year. (including homework questions)

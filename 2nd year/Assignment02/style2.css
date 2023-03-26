@@ -1,0 +1,15 @@
+.imag{
+    height:300px;
+    width:400px;
+    border-radius: 10px;
+    margin-left:auto;
+    margin-right: auto;
+    position: relative;
+    display: block;
+}
+.special{
+    font-size: 80px;
+}
+.special:hover {
+    color:red;
+}

@@ -1,0 +1,11 @@
+.content{
+    border: 1px solid black;
+    width:150px;
+   
+    background-color: bisque;
+    position: fixed;
+}
+.para{
+    display: inline-block;
+    padding-left: 15%;
+}

@@ -1,0 +1,31 @@
+li {
+    display: inline;
+    float: left;
+  }
+ li a {
+    display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 130px;
+  text-decoration: none;
+  }
+  li a:hover{
+    background-color: beige;
+    color:black;
+  }
+  ul {
+    list-style-type: none;
+  margin: 0;
+ padding: 0%;
+  overflow: hidden;
+  background-color: #333;
+  }
+  .main{
+    height:400px;
+    width:1200px;
+  }
+  h1{
+    text-align: center;
+    color:red;
+    text-decoration: underline red;
+  }

@@ -1,0 +1,18 @@
+.container{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}h1{
+    text-align: center;
+    color:red;
+}
+label{
+    font-size: 20px;
+    color:blue;
+    align-content: center;
+}
+.submit{
+    color: wheat;
+    background-color: green;
+}

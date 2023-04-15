@@ -1,26 +1,87 @@
 import java.util.*;
+
 public class Question06 {
 	
+	static class Tree{
+		int data;
+		Tree left;
+		Tree right;
+		
+		Tree(int data){
+			this.data=data;
+			this.right=null;
+			this.left=null;
+		}
+	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int arr[]= {1,2,3,4,5,0,6,7,0,0,0};
-		dfsTraversal(arr, 1);
+		
+		Tree root=new Tree(1);
+		root.left=new Tree(2);
+		root.right=new Tree(3);
+		
+		root.left.left=new Tree(4);
+		root.right.right=new Tree(5);
+		
+		root.left.left.left=new Tree(6);
+		root.right.right.right=new Tree(7);
+		
+		traversal(root);
+		System.out.println();
+		System.out.println("DFS Traversals are : ");
+		System.out.println("Inorder : ");
+		inorder(root);
+		System.out.println();
+		System.out.println("Preorder : ");
+		preorder(root);
+		System.out.println();
+		System.out.println("Postorder : ");
+		postorder(root);
+		
 	}
-	public static void dfsTraversal(int arr[], int root) {
-		boolean[] visit=new boolean[arr.length];
-		Stack<Integer> stk=new Stack<Integer>();
+	
+	public static void traversal(Tree root) {
+		if(root==null)
+			return;
+		Tree head=root;
+		Stack<Tree> stk=new Stack<Tree>();
 		stk.push(root);
-		visit[root]=true;
+		head=root.left;
+		while(head!=null) {
+			stk.push(head);
+			head=head.left;
+		}
+		head=root.right;
+		while(head!=null) {
+			stk.push(head);
+			head=head.right;
+		}
 		while(!stk.isEmpty()) {
-			int res=stk.pop();
-			System.out.print(res+" ");
-			for(int i=0;i<arr.length;i++) {
-				if(arr[i]!=0&&!visit[i]) {
-					stk.add(i);
-					visit[i]=true;
-				}
-			}
+			System.out.print(stk.pop().data+" ");
 		}
 	}
+	
+	public static void inorder(Tree root) {
+		if(root==null)
+			return;
+		inorder(root.left);
+		System.out.print(root.data+" ");
+		inorder(root.right);
+	}
+	public static void preorder(Tree root) {
+		if(root==null)
+			return;
+		System.out.print(root.data+" ");
+		preorder(root.left);
+		preorder(root.right);
+	}
+	public static void postorder(Tree root) {
+		if(root==null)
+			return;
+		postorder(root.left);
+		preorder(root.right);
+		System.out.print(root.data+" ");
+	}
+	
 }
